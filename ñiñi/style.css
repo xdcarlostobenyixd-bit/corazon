@@ -5,75 +5,123 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: radial-gradient(circle at center, #0b132b, #010409);
     min-height: 100vh;
-    background-color: #0c0f1d;
     overflow: hidden;
-}
-
-.contenedor {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    width: 340px;
-    height: 340px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: latir 1.2s infinite alternate ease-in-out;
 }
 
-.capa-texto {
+.instruccion {
     position: absolute;
+    top: 30px;
     width: 100%;
-    height: 100%;
-    z-index: 5;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    letter-spacing: 1px;
+    z-index: 10;
+    pointer-events: none;
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
 
-.texto-brillante {
-    fill: #ffffff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0px 0px 5px #ff2d55) drop-shadow(0px 0px 10px #ff2d55);
-}
-
-/* Estructura perfecta del corazón de tu imagen */
-.heart {
+/* --- LA LUNA CRECIENTE --- */
+.luna {
     position: absolute;
-    width: 90px;
-    height: 90px;
-    background-color: #ff2d55;
-    transform: rotate(-45deg);
+    top: 60px;
+    right: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Truco de sombra para hacer la forma de media luna */
+    box-shadow: 18px 14px 0 0 #ffffff; 
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
     z-index: 1;
 }
 
-.heart::before,
-.heart::after {
-    content: "";
+/* --- CIELO CON MUCHAS MÁS ESTRELLAS --- */
+.estrellas-fondo-1, .estrellas-fondo-2, .estrellas-parpado {
     position: absolute;
-    width: 90px;
-    height: 90px;
-    background-color: #ff2d55;
-    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
 }
 
-.heart::before {
-    top: -45px;
-    left: 0;
+.estrellas-fondo-1 {
+    width: 1px;
+    height: 1px;
+    box-shadow: 100px 200px #fff, 450px 120px #fff, 300px 700px #fff, 1100px 300px #fff,
+                750px 800px #fff, 150px 900px #fff, 950px 550px #fff, 600px 400px #fff,
+                200px 500px #fff, 850px 100px #fff, 1300px 400px #fff, 700px 600px #fff;
 }
 
-.heart::after {
+.estrellas-fondo-2 {
+    width: 2px;
+    height: 2px;
+    box-shadow: 50px 350px #fff, 500px 250px #fff, 800px 650px #fff, 1200px 750px #fff,
+                900px 200px #fff, 250px 800px #fff, 1050px 150px #fff, 400px 850px #fff,
+                150px 150px #fff, 650px 50px #fff, 1350px 250px #fff, 850px 900px #fff;
+    opacity: 0.6;
+}
+
+.estrellas-parpado {
+    width: 2px;
+    height: 2px;
+    box-shadow: 250px 300px #fff, 550px 700px #fff, 800px 300px #fff, 1250px 550px #fff,
+                950px 100px #fff, 150px 600px #fff, 380px 120px #fff, 1050px 800px #fff,
+                480px 480px #fff, 720px 180px #fff, 1150px 420px #fff, 310px 750px #fff;
+    animation: parpadear 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes parpadear {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- ELEMENTOS DE INTERACCIÓN (Siguen igual) --- */
+#universo {
+    position: absolute;
     top: 0;
-    left: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: auto;
 }
 
-@keyframes latir {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
+.estrella-clic {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff2d55, 0 0 30px #ff2d55, 0 0 45px #fff;
+    transform: translate(-50%, -50%) scale(0);
+    animation: aparecerDestello 1.5s forwards ease-out;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.texto-flotante {
+    position: absolute;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    transform: translate(-50%, -100%);
+    text-shadow: 0 0 8px #ff2d55, 0 0 15px #ff2d55;
+    pointer-events: none;
+    animation: flotarHaciaArriba 2.2s forwards ease-out;
+    z-index: 4;
+}
+
+@keyframes aparecerDestello {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(2.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+@keyframes flotarHaciaArriba {
+    0% { transform: translate(-50%, -20px); opacity: 0; }
+    15% { transform: translate(-50%, -40px); opacity: 1; }
+    100% { transform: translate(-50%, -120px); opacity: 0; }
 }

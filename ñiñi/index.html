@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texto Alrededor del Corazón Perfecto</title>
+    <title>Cielo Mágico con Luna y Música Local</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="contenedor">
-        <svg viewBox="0 0 300 300" class="capa-texto">
-            <defs>
-                <!-- Ruta Superior: Va de izquierda a derecha por arriba -->
-                <path id="curva-arriba" d="M 40,150 A 110,110 0 1,1 260,150" />
-                
-                <!-- Ruta Inferior Perfecta: Va de izquierda a derecha por abajo -->
-                <path id="curva-abajo" d="M 40,150 A 110,110 0 0,0 260,150" />
-            </defs>
+    <div class="instruccion">Haz clic en el cielo para escuchar tu música y descubrir los mensajes...</div>
 
-            <!-- Texto de arriba -->
-            <text class="texto-brillante">
-                <textPath href="#curva-arriba" startOffset="50%" text-anchor="middle">
-                    Me encantas demasiado 
-                </textPath>
-            </text>
+    <!-- Luna Brillante -->
+    <div class="luna"></div>
 
-            <!-- Texto de abajo (Con 'side="right"' para que no se invierta) -->
-            <text class="texto-brillante">
-                <textPath href="#curva-abajo" startOffset="50%" text-anchor="middle" side="right">
-                    Espero hacerte feliz
-                </textPath>
-            </text>
-        </svg>
+    <!-- Capas de estrellas de fondo -->
+    <div class="estrellas-fondo-1"></div>
+    <div class="estrellas-fondo-2"></div>
+    <div class="estrellas-parpado"></div>
 
-        <!-- El corazón central original -->
-        <div class="heart"></div>
-    </div>
+    <!-- AQUÍ ESTÁ CORREGIDO EL SIGNO IGUAL (=) -->
+    <div id="universo"></div>
+
+    <!-- Música de fondo local -->
+    <audio id="musica-fondo" loop>
+        <source src="musica.mp3" type="audio/mp3">
+    </audio>
 </body>
 </html>
