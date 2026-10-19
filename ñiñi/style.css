@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0c0f1d;
+    overflow: hidden;
+}
+
+.contenedor {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: latir 1.2s infinite alternate ease-in-out;
+}
+
+.capa-texto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.texto-brillante {
+    fill: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0px 0px 5px #ff2d55) drop-shadow(0px 0px 10px #ff2d55);
+}
+
+/* Estructura perfecta del corazón de tu imagen */
+.heart {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #ff2d55;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #ff2d55;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -45px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 45px;
+}
+
+@keyframes latir {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}

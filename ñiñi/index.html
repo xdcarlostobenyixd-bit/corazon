@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Alrededor del Corazón Perfecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <svg viewBox="0 0 300 300" class="capa-texto">
+            <defs>
+                <!-- Ruta Superior: Va de izquierda a derecha por arriba -->
+                <path id="curva-arriba" d="M 40,150 A 110,110 0 1,1 260,150" />
+                
+                <!-- Ruta Inferior Perfecta: Va de izquierda a derecha por abajo -->
+                <path id="curva-abajo" d="M 40,150 A 110,110 0 0,0 260,150" />
+            </defs>
+
+            <!-- Texto de arriba -->
+            <text class="texto-brillante">
+                <textPath href="#curva-arriba" startOffset="50%" text-anchor="middle">
+                    Me encantas demasiado 
+                </textPath>
+            </text>
+
+            <!-- Texto de abajo (Con 'side="right"' para que no se invierta) -->
+            <text class="texto-brillante">
+                <textPath href="#curva-abajo" startOffset="50%" text-anchor="middle" side="right">
+                    Espero hacerte feliz
+                </textPath>
+            </text>
+        </svg>
+
+        <!-- El corazón central original -->
+        <div class="heart"></div>
+    </div>
+</body>
+</html>
