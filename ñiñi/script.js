@@ -16,7 +16,10 @@ const mensajes = [
     "💌 Eres especial para mí",
     "que lindo es tenerte en mi vida",
     "💞 Eres mi inspiración",
-    "🌈 Me haces sentir vivo",
+    "🌈 Te extraño mucho",
+    "🌹 Me encanta escucharte",
+    "💎 Tus ojos me enloquecen",
+    "🌺 Quiero pasar tiempo contigo",
 ];
 
 // ... (El inicio de tu archivo script.js se mantiene exactamente igual) ...
@@ -25,7 +28,7 @@ document.addEventListener('click', (e) => {
     // TRUCO: Iniciar la música de fondo únicamente en el primer clic
     if (!musicaIniciada) {
         // Define el segundo exacto de inicio
-        musica.currentTime = 45; 
+        musica.currentTime = 0; 
         
         // NUEVO: Baja el volumen al 30% para que suene suave de fondo
         musica.volume = 0.3; 

@@ -10,7 +10,7 @@
 <body>
     <div class="instruccion">Haz clic en el cielo para escuchar tu música y descubrir los mensajes...</div>
 
-    <!-- Luna Brillante -->
+    <!-- Luna llena en el centro -->
     <div class="luna"></div>
 
     <!-- Capas de estrellas de fondo -->
@@ -18,8 +18,34 @@
     <div class="estrellas-fondo-2"></div>
     <div class="estrellas-parpado"></div>
 
-    <!-- AQUÍ ESTÁ CORREGIDO EL SIGNO IGUAL (=) -->
+    <!-- Área interactiva -->
     <div id="universo"></div>
+
+    <!-- Escena de la montaña, gatitos y corazón -->
+   <!-- Escena de la montaña, gatitos y corazón -->
+    <div class="escena-montana">
+        <div class="montana"></div>
+        <div class="gatitos">
+            <!-- Gato Izquierdo Grande -->
+            <svg class="gato gato-izq" viewBox="0 0 100 140">
+                <path d="M50 10 C44 11 41 18 41 23 C41 28 44 32 46 36 C42 46 39 58 38 72 C37 83 31 92 31 100 C31 113 40 125 51 125 C62 125 71 113 71 100 C71 92 65 83 64 72 C63 58 60 46 56 36 C58 32 61 28 61 23 C61 18 58 11 52 10 L48 10 Z" fill="#020307" />
+                <!-- Orejas -->
+                <path d="M41 23 L37 5 L46 14 Z M61 23 L65 5 L56 14 Z" fill="#020307" />
+                <!-- Cola Curvada -->
+                <path d="M31 100 Q15 95 12 110 Q10 120 18 123 Q25 125 25 118 Q25 113 21 112 Q17 111 17 106 Q17 103 26 104 L31 104" fill="none" stroke="#020307" stroke-width="5" stroke-linecap="round" />
+            </svg>
+
+            <!-- Gato Derecho Pequeño -->
+            <svg class="gato gato-der" viewBox="0 0 100 140">
+                <path d="M50 10 C44 11 41 18 41 23 C41 28 44 32 46 36 C42 46 39 58 38 72 C37 83 31 92 31 100 C31 113 40 125 51 125 C62 125 71 113 71 100 C71 92 65 83 64 72 C63 58 60 46 56 36 C58 32 61 28 61 23 C61 18 58 11 52 10 L48 10 Z" fill="#020307" />
+                <!-- Orejas -->
+                <path d="M41 23 L37 5 L46 14 Z M61 23 L65 5 L56 14 Z" fill="#020307" />
+                <!-- Cola Curvada -->
+                <path d="M71 100 Q87 95 90 110 Q92 120 84 123 Q77 125 77 118 Q77 113 81 112 Q85 111 85 106 Q85 103 76 104 L71 104" fill="none" stroke="#020307" stroke-width="5" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="corazon-gatitos"></div>
+    </div>
 
     <!-- Música de fondo local -->
     <audio id="musica-fondo" loop>
